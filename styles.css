@@ -1,0 +1,77 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #eeeff1;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todoTitleContainer {
+    font-size: 100px;
+    color: purple;
+    opacity: 0.2;
+    cursor: default;
+    user-select: none;
+}
+
+input {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 280px;
+    height: 50px;
+    background-color: white;
+    border: none;
+    outline: 2px solid purple;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+ul {
+    padding: 0;
+    width: 300px;
+    margin: 0;
+    max-height: 200px;
+    overflow-y: scroll;
+}
+
+li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+    padding: 10px;
+    background-color: white;
+    outline: 1px solid lightgray;
+    user-select: none;
+    cursor: pointer;
+}
+
+.todo.finished {
+    color: green;
+}
+
+.todo.finished:before {
+    padding-right: 10px;
+    content: '✓'
+}
+
+footer {
+    /* background-color: green; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 10px;
+    color: lightgray;
+    margin: 40px;
+}
+
+h2 {
+    margin: 0;
+}
