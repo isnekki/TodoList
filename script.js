@@ -15,11 +15,26 @@ const addTodoHandler = (e) => {
     const todo = document.createElement('li')
     const todoText = document.createElement('h2')
     todo.className = 'todo'
+    // todo.id = todoList.children.length
+    todo.addEventListener('click', completeTodoHandler)
+    todo.addEventListener('contextmenu', deleteTodoHandler)
     todoText.className = 'todoText'
     todoText.textContent = todoInput.value
     todo.appendChild(todoText)
     todoList.appendChild(todo)
     todoInput.value = ''
+}
+
+const completeTodoHandler = (e) => {
+    const todo = e.srcElement.parentNode
+    todo.classList.add('finished')
+}
+
+const deleteTodoHandler = (e) => {
+    e.preventDefault()
+    const todoList = document.querySelector('.todoList')
+    const todo = e.srcElement.parentNode
+    todoList.removeChild(todo)
 }
 
 form.addEventListener('submit', addTodoHandler)
